@@ -1,25 +1,31 @@
 package com.ll.java.utils;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 public class Log {
+    private static final String COMMON_DATE = "yyyy-MM-dd HH:mm:ss:SSSS";
+
     public static void log(String msg) {
-        System.out.println(msg);
+        SimpleDateFormat format = new SimpleDateFormat(COMMON_DATE);
+        String logMsg = format.format(new Date(System.currentTimeMillis())) + " :\t";
+        System.out.println(logMsg + msg);
     }
 
     public static void logArray(int[] arrary) {
-        log("\t" + Arrays.toString(arrary));
+        Log.log("\t" + Arrays.toString(arrary));
     }
 
     public static void logArray(float[] arrary) {
-        log(Arrays.toString(arrary));
+        Log.log(Arrays.toString(arrary));
     }
 
     public static void logArray(double[] arrary) {
-        log(Arrays.toString(arrary));
+        Log.log(Arrays.toString(arrary));
     }
 
     public static void logArray(Object[] arrary) {
-        log(Arrays.toString(arrary));
+        Log.log(Arrays.toString(arrary));
     }
 }
