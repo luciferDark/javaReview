@@ -1,5 +1,6 @@
 package com.ll.java;
 
+import com.ll.java.interfaceTest.InterHelper;
 import com.ll.java.sort.SortHelper;
 import com.ll.java.utils.Log;
 
@@ -8,6 +9,11 @@ public class Main {
 
 
     public static void main(String[] args) {
+//        testSort();
+        testInter();
+    }
+
+    public static void testSort(){
         SortHelper sortHelper = new SortHelper();
         Log.log("input arr is:");
         Log.logArray(sortBefore);
@@ -18,4 +24,10 @@ public class Main {
         sortHelper.insertSort(sortBefore, SortHelper.SortOrder.ASC);
         sortHelper.insertSort(sortBefore, SortHelper.SortOrder.DESC);
     }
+    public static void testInter(){
+        InterHelper interHelper = new InterHelper();
+        interHelper.init();
+        interHelper.start();
+    }
+
 }
