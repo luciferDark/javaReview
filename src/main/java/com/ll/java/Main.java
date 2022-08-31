@@ -3,6 +3,8 @@ package com.ll.java;
 import com.ll.java.annotationTest.AnnotationHelper;
 import com.ll.java.interfaceTest.InterHelper;
 import com.ll.java.sort.SortHelper;
+import com.ll.java.threads.Threads;
+import com.ll.java.trees.TreeHelp;
 import com.ll.java.utils.Log;
 
 public class Main {
@@ -11,7 +13,21 @@ public class Main {
     public static void main(String[] args) {
 //        testSort();
 //        testInter();
-        testAnnotation();
+//        testAnnotation();
+
+        int a = 1233;
+        int b = 12322;
+
+        a = a^b;
+        Log.log("a is:" + a);
+        b = a^b;
+        Log.log("b is:" + b);
+        a = a^b;
+
+        Log.log("a is:" + a);
+        Log.log("b is:" + b);
+//        testThread();
+        testTree();
     }
 
     public static void testSort(){
@@ -30,10 +46,20 @@ public class Main {
         AnnotationHelper annotationHelper = new AnnotationHelper();
         annotationHelper.start();
     }
+    public static void testThread(){
+        Threads threads = new Threads();
+        threads.init();
+        threads.start();
+    }
     public static void testInter(){
         InterHelper interHelper = new InterHelper();
         interHelper.init();
         interHelper.start();
     }
 
+    public static void testTree(){
+        TreeHelp treeHelp = new TreeHelp();
+        treeHelp.init();
+        treeHelp.start();
+    }
 }
